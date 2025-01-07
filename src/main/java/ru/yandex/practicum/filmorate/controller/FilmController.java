@@ -48,8 +48,8 @@ public class FilmController {
             throw new ValidationException("Релиз фильма не может быть раньше 28 декабря 1895 года");
         }
 
-        if (film.getDuration() == null || !film.getDuration().isPositive()) {
-            log.error("Продолжительность фильма отрицательная или не указана");
+        if (film.getDuration() == null || film.getDuration() <= 0) {
+            log.error("Продолжительность фильма не положительная или не указана");
 
             throw new ValidationException("Продолжительность фильма должна быть положительным числом");
         }

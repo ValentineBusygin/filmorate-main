@@ -19,7 +19,7 @@ public class FilmControllerTests {
         film.setName("film1");
         film.setDescription("film1desc");
         film.setReleaseDate(LocalDate.now().minusDays(120));
-        film.setDuration(Duration.ofMinutes(60));
+        film.setDuration(60L);
         Film createdFilm = fController.create(film);
         assertEquals(createdFilm.getId(), 1, "Ожидалось, что ID фильма будет 1");
 
@@ -35,7 +35,7 @@ public class FilmControllerTests {
         film.setName("film1");
         film.setDescription("film1desc");
         film.setReleaseDate(LocalDate.now().minusDays(120));
-        film.setDuration(Duration.ofMinutes(60));
+        film.setDuration(60L);
         Film createdFilm = fController.create(film);
         assertEquals(createdFilm.getId(), 1, "Ожидалось, что ID фильма будет 1");
 

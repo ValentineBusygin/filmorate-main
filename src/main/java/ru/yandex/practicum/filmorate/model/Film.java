@@ -1,10 +1,8 @@
 package ru.yandex.practicum.filmorate.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
-import java.time.Duration;
 import java.time.LocalDate;
 
 @Data
@@ -15,9 +13,10 @@ public class Film {
     @NotBlank(message = "Название не должно быть пустым")
     String name;
 
+    @Size(max = 200, message = "Превышен максимальный размер описания")
     String description;
 
     LocalDate releaseDate;
 
-    Duration duration;
+    Long duration;
 }
