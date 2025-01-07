@@ -5,7 +5,7 @@ import ru.yandex.practicum.filmorate.controller.FilmController;
 import ru.yandex.practicum.filmorate.model.Film;
 
 import java.time.Duration;
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,7 +18,7 @@ public class FilmControllerTests {
         Film film = new Film();
         film.setName("film1");
         film.setDescription("film1desc");
-        film.setReleaseDate(Instant.now().minusSeconds(120));
+        film.setReleaseDate(LocalDate.now().minusDays(120));
         film.setDuration(Duration.ofMinutes(60));
         Film createdFilm = fController.create(film);
         assertEquals(createdFilm.getId(), 1, "Ожидалось, что ID фильма будет 1");
@@ -34,7 +34,7 @@ public class FilmControllerTests {
         Film film = new Film();
         film.setName("film1");
         film.setDescription("film1desc");
-        film.setReleaseDate(Instant.now().minusSeconds(120));
+        film.setReleaseDate(LocalDate.now().minusDays(120));
         film.setDuration(Duration.ofMinutes(60));
         Film createdFilm = fController.create(film);
         assertEquals(createdFilm.getId(), 1, "Ожидалось, что ID фильма будет 1");

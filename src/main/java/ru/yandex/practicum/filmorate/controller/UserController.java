@@ -82,6 +82,9 @@ public class UserController {
 
             User oldUser = users.get(newUser.getId());
 
+            if (newUser.getLogin() != null) {
+                oldUser.setLogin(newUser.getLogin());
+            }
             if (newUser.getEmail() != null) {
                 oldUser.setEmail(newUser.getEmail());
             }

@@ -6,6 +6,7 @@ import ru.yandex.practicum.filmorate.model.User;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Collection;
 
 public class UserControllerTests {
@@ -16,7 +17,7 @@ public class UserControllerTests {
         User user = new User();
         user.setEmail("user1@example.com");
         user.setLogin("user1");
-        user.setBirthday(Instant.now().minusSeconds(120));
+        user.setBirthday(LocalDate.now().minusDays(1));
         User createdUser = uController.create(user);
         assertEquals(createdUser.getId(), 1, "Ожидалось, что ID пользователя будет 1");
 
@@ -31,7 +32,7 @@ public class UserControllerTests {
         User user = new User();
         user.setEmail("user1@example.com");
         user.setLogin("user1");
-        user.setBirthday(Instant.now().minusSeconds(120));
+        user.setBirthday(LocalDate.now().minusDays(1));
         User createdUser = uController.create(user);
         assertEquals(createdUser.getId(), 1, "Ожидалось, что ID пользователя будет 1");
 

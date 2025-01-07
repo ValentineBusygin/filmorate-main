@@ -8,7 +8,7 @@ import ru.yandex.practicum.filmorate.exception.NotFoundException;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
 
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,13 +36,13 @@ public class FilmController {
             throw new ValidationException("Название фильма не может быть пустым");
         }
 
-        if (filmName.length() > 200) {
-            log.error("Название фильма слишком длинное");
+        if (film.getDescription().length() > 200) {
+            log.error("Описание фильма слишком длинное");
 
             throw new ValidationException("Название фильма не должно превышать 200 символов");
         }
 
-        if (film.getReleaseDate().isBefore(Instant.parse("1895-12-28T00:00:00.00Z"))) {
+        if (film.getReleaseDate().isBefore(LocalDate.parse("1895-12-28"))) {
             log.error("Релиз фильма раньше 28 декабря 1895 года");
 
             throw new ValidationException("Релиз фильма не может быть раньше 28 декабря 1895 года");

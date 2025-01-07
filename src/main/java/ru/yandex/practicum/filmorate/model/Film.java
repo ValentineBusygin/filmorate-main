@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.Duration;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @Data
 public class Film {
@@ -17,7 +17,7 @@ public class Film {
 
     String description;
 
-    Instant releaseDate;
+    LocalDate releaseDate;
 
     Duration duration;
 }
