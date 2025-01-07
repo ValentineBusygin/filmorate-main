@@ -5,7 +5,6 @@ import ru.yandex.practicum.filmorate.controller.UserController;
 import ru.yandex.practicum.filmorate.model.User;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Collection;
 
