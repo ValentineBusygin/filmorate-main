@@ -42,7 +42,7 @@ public class FilmController {
             throw new ValidationException("Название фильма не должно превышать 200 символов");
         }
 
-        if (film.getReleaseDate().isBefore(Instant.parse("1895-12-28T00:00:00.00Z"))){
+        if (film.getReleaseDate().isBefore(Instant.parse("1895-12-28T00:00:00.00Z"))) {
             log.error("Релиз фильма раньше 28 декабря 1895 года");
 
             throw new ValidationException("Релиз фильма не может быть раньше 28 декабря 1895 года");
